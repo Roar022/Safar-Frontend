@@ -10,16 +10,6 @@ export const Login = (props) => {
     const [isValidCredentials, setIsValidCredentials] = useState(false);
     const [isFormValidated, setIsFormValidated] = useState(false);
 
-
-    const NavigatetoPage = () => {
-      if(isValidCredentials){
-        return <Navigate to="/" />
-      }
-      else{
-        return <Navigate to="/login" />
-      }
-    }
-
     const handleLogin = async (event) => {
       event.preventDefault();
         try {
@@ -31,9 +21,14 @@ export const Login = (props) => {
           const { message, status } = response.data;
           setIsValidCredentials(status);
           alert(message);
-          navigate("/booking");
-          setTimeout(NavigatetoPage,2000);
-        }
+            if(status){
+              navigate("/booking");
+            }
+            else{
+              navigate("/login");
+            }
+          }
+        
         catch (error) {
             console.error(error);
         }
