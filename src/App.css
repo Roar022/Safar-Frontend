@@ -133,3 +133,7 @@ button {
 input {
   margin-left: 0.5rem;
 }
+
+.btn{
+  color: white;
+}

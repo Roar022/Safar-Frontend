@@ -34,10 +34,6 @@ const Bookings = () => {
               <th scope="col">S No.</th>
               <th scope="col">Name</th>
               <th scope="col">Destination</th>
-              {/* <th scope="col">Email</th>
-              <th scope="col">Address</th> */}
-              {/* <th scope="col">Phone</th> */}
-              {/* <th scope="col">GuestCount</th> */}
               <th scope="col">Departure</th>
               <th scope="col">Return Date</th>
               <th scope="col">Actions</th>
@@ -52,16 +48,11 @@ const Bookings = () => {
                   </th>
                   <td >{user.name}</td>
                   <td >{user.userDestination}</td>
-                  {/* <td >{user.email}</td> */}
-                  {/* <td >{user.address}</td> */}
-                  {/* <td >{user.userPhone}</td> */}
-                  {/* <td >{user.userCount}</td> */}
                   <td >{user.userArrivalDate}</td>
                   <td >{user.userLeavingDate}</td>
-
                   <td>
                     <Link className="btn btn-primary mx-2" to={`/viewuser/${user.id}`}>View</Link>
-                    <Link className="btn btn-outline-primary mx-2" to={`/edituser/${user.id}`}>Edit</Link>
+                    <Link className="btn btn-outline-primary mx-2" style={{color:"black"}} to={`/edituser/${user.id}`}>Edit</Link>
                     <button className="btn btn-danger mx-2"
                     onClick={()=> deleteUser(user.id)}
                     >Delete</button>

@@ -1,13 +1,16 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { Navigate, useNavigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
+import { Navbar } from "../components/Navbar";
+
+let loggedIns=false;
 
 export const Login = (props) => {
 
     let navigate = useNavigate();
     const [uname, setUsername] = useState('');
     const [passwd, setPassword] = useState('');
-    const [isValidCredentials, setIsValidCredentials] = useState(false);
+    // const [loggedIn, setLoggedIn] = useState(false);
     const [isFormValidated, setIsFormValidated] = useState(false);
 
     const handleLogin = async (event) => {
@@ -19,10 +22,12 @@ export const Login = (props) => {
             password: passwd
           });
           const { message, status } = response.data;
-          setIsValidCredentials(status);
+          // setLoggedIn(status);
+         loggedIns = status;
+          <Navbar loggedIn={status} />
           alert(message);
             if(status){
-              navigate("/booking");
+              navigate("/adduser");
             }
             else{
               navigate("/login");
@@ -71,6 +76,7 @@ export const Login = (props) => {
             }}
             required
             />
+
             <button
             type="submit"
             className="login"
@@ -80,3 +86,5 @@ export const Login = (props) => {
         </div>
     )
 }
+
+export { loggedIns };
