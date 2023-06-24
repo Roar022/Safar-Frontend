@@ -25,10 +25,10 @@ const Bookings = () => {
   }
 
   return (
-    <div className="container">
+    <div className="container" style={{margin:"auto",marginTop:"5rem"}}>
       <NavBarBook/>
       <div className="py-4">
-        <table className="table table-bordered border shadow">
+        <table className="mx-10 table table-bordered border shadow">
           <thead>
             <tr >
               <th scope="col">S No.</th>

@@ -956,10 +956,7 @@ section{
     /* object-fit: fill; */
     object-fit: cover;
   }
-  .news-box{
-    /* margin: 15px; */
-   
-  }
+
   .data{
     width: 1800px;
   }
@@ -1231,5 +1228,6 @@ section{
         border-radius: 25px;
     }
    }
+
 
 
