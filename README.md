@@ -4,7 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 #Run the following commands first :-
 
-npm install 
+npm install
 
 npm install react-router-dom
 
@@ -14,6 +14,7 @@ npm install react-bootstrap bootstrap
 
 npm install axios
 
+npm install pexels
 
 ## Available Scripts
 
