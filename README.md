@@ -3,10 +3,15 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 #Run the following commands first :-
+
 npm install 
+
 npm install react-router-dom
+
 npm install react-icons --save
+
 npm install react-bootstrap bootstrap
+
 npm install axios
 
 
