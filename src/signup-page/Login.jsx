@@ -3,7 +3,7 @@ import axios from "axios";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import { Navbar } from "../components/Navbar";
 import { setLoginStatus } from "./Auth";
-
+import "./SignUp.css";
 // let isLoggedIns = false;
 
 export const Login = (props) => {
@@ -49,7 +49,7 @@ export const Login = (props) => {
 
     return (
         <div className="auth-form-container">
-            <h2>Login</h2>
+            <h2>WELCOME TO SAFAR</h2>
         <form className={`login-form ${isFormValidated ? "was-validated" : ""}`} onSubmit={handleFormSubmit}>
             <label htmlFor="username">Username: </label>
             <input

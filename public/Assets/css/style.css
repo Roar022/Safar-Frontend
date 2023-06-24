@@ -869,6 +869,9 @@ section{
     .heading-title{
         font-size: 3.5rem;
     }
+    .heading h1{
+        font-size: 7rem;
+    }
 }
 
 
