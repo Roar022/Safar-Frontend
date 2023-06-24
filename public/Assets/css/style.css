@@ -1130,19 +1130,21 @@ section{
        border-radius: 30px;
        background-color: #09bef0;
        border: 1px transparent ;
-     box-shadow: 10px 10px 15px #cfdfec;
+     /* box-shadow: 10px 10px 15px #cfdfec; */
        margin: auto;
        display: contents;
        display: block;
      font-family: Arial, Helvetica, sans-serif;
-    font-size: 20px;
+    font-size: 1.3rem;
     font-weight: 600;
     margin-top: 10px;
     margin-bottom: 10px;
-   
+   transition: 0.4s;
    }
    .load_more_gallery:hover{
-     background-color: #58d6f9;
+    transform: scale(1.1);
+    color: black;
+    background-color: #58d6f9;
    
    }
    /* @media(max-width:520px){

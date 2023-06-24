@@ -143,11 +143,11 @@ export function Navbar() {
 
               {/* {toggleButton} */}
               {isLoggedIn === true ? (
-                <button type="button" className="btn" onClick={handleLogout}>
+                <button type="button" className="btnnb" onClick={handleLogout}>
                   Logout
                 </button>
               ) : (
-                <button type="button" className="btn" onClick={handleSignUp}>
+                <button type="button" className="btnnb" onClick={handleSignUp}>
                   Sign Up
                 </button>
               )}
