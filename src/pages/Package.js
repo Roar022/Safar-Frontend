@@ -29,7 +29,7 @@ function Package() {
       <div className="content">
         <h3>{resu.description}</h3>
         <p>{resu.alt_description}</p>
-        <NavLink to="/book" className="btnnb">
+        <NavLink to="/adduser" className="btnnb">
           book now
         </NavLink>
       </div>
