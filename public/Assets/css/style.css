@@ -18,7 +18,7 @@
 /* making page fit to zoom defined in browser */
 /* x rem = x*default font size */
 html{
-    font-size: 69%;
+    font-size: 62.5%;
     overflow-x: hidden;
 }
 
@@ -29,6 +29,7 @@ html{
     outline: none; border: none;
     text-decoration: none;
     text-transform: capitalize;
+    font-size: 62.5%;
 }
 
 /* The term 'webkit' is used in the CSS syntax for rendering content in Safari and Chrome browsers. */
@@ -528,7 +529,7 @@ section{
 
 .packages .box-container{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
     gap: 2rem;
 }
 
