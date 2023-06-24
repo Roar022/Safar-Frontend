@@ -41,7 +41,7 @@
     background-color: rgb(255, 255, 255);
   }
   
-  h2 {
+  .auth-form-container h2 {
     color: rgb(0, 0, 0);
     font-size: 24px;
     font-weight: 700;
@@ -60,7 +60,7 @@
 
   }
   
-  label {
+   label {
     text-align: left;
     padding: 0.25rem 0;
   }
@@ -127,13 +127,13 @@
   }
 
 
-h2{
+.auth-form-container h2{
     font-size: 5rem;
     margin: 2rem 1rem;
     margin-bottom: 3rem;
 }
 
-form{
+.auth-form-container form{
     padding-bottom: 5rem;
 }
 .auth-form-container button{
@@ -143,11 +143,11 @@ form{
     padding: 1rem 3rem;
 }
 
-form button:hover{
+.auth-form-container form button:hover{
     background: linear-gradient(45deg, #bb36fd,#9b00e8);
     transform: scale(1.05);
 }
-.link:hover{
+.auth-form-container .link:hover{
 color: #9b00e8;
 }
 .form-group{

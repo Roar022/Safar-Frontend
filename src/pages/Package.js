@@ -1,5 +1,6 @@
 import React, { Fragment } from "react";
 import { NavLink } from "react-router-dom";
+import Data from "./Data";
 // import { setupMenu, setupSwiper, setupLoadMore } from './Assets/js/script.js';
 
 // // Call the setup functions
@@ -8,27 +9,27 @@ import { NavLink } from "react-router-dom";
 // setupLoadMore();
 
 function Package() {
-  const [dataa, setData] = React.useState([]);
+  const [dataa, setData] = React.useState(Data);
   const [visibility, setVisibility] = React.useState(3);
 
-  React.useEffect(() => {
-    fetch(
-      "https://api.unsplash.com/search/photos?query=tourist%20attraction&client_id=CnwwMAFDZGn9uxKC9bKQUQnc-0c3ANeOls_M9UpY3Z4"
-    )
-      .then((res) => res.json())
-      .then((data) => setData(data.results));
-  }, [dataa.id]);
+  // React.useEffect(() => {
+  //   fetch(
+  //     "https://api.unsplash.com/search/photos?query=tourist%20attraction&client_id=CnwwMAFDZGn9uxKC9bKQUQnc-0c3ANeOls_M9UpY3Z4"
+  //   )
+  //     .then((res) => res.json())
+  //     .then((data) => setData(data.results));
+  // }, [dataa.id]);
 
   console.log(dataa);
 
   const elements = dataa.slice(0, visibility).map((resu) => (
     <div className="box">
       <div className="image">
-        <img src={resu.urls.full} alt="" />
+        <img src={resu.image} alt="" />
       </div>
       <div className="content">
-        <h3>{resu.description}</h3>
-        <p>{resu.alt_description}</p>
+        <h3>{resu.name}</h3>
+        <p>{resu.description}</p>
         <NavLink to="/adduser" className="btnnb">
           book now
         </NavLink>
