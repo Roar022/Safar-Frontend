@@ -1,38 +1,49 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 import { GiRocketThruster } from "react-icons/gi";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { IconContext } from "react-icons/lib";
 import { NavLink, useNavigate } from "react-router-dom";
-import { Login } from "../signup-page/Login";
+import { isLoggedIn } from "../signup-page/Auth";
 import { render } from "@testing-library/react";
-import { loggedIns } from "../signup-page/Login";
+import { setLoginStatus } from "../signup-page/Auth";
 
-export function Navbar(props) {
+export function Navbar() {
   let navigate = useNavigate();
-  const { loggedIn } = props;
+
+  // let bookNav = "";
+  // if(isLoggedIn) bookNav = "/adduser";
+  // else bookNav = "/login";
+
   const [click, setClick] = useState(false);
-  const [book, setBookto] = useState(" ");
+  const [book, setBookto] = useState("");
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
 
-  let togglebtn = loggedIns;
-
-  const handleBooking = () => {
-    if(loggedIns === true){
+  useEffect(() => {
+    if (isLoggedIn) {
       setBookto("/adduser");
-    }
-    else{
+    } else {
       setBookto("/login");
     }
-  }
+  }, [isLoggedIn]);
+  // const handleBooking = () => {
+  //   if(isLoggedIn === true){
+  //     setBookto("/adduser");
+  //   }
+  //   else{
+  //     setBookto("/login");
+  //   }
+  // }
   
   const handleSignUp = () => {
     navigate("/login")
   }
   
   const handleLogout = () => {
+    setBookto("/login");
+    setLoginStatus(false)
     navigate("/")
   }
 
@@ -85,11 +96,11 @@ export function Navbar(props) {
                 </li>
                 <li className="nav-item">
                 <NavLink
-                  to={book}
+                to={book}
                   className={({ isActive }) =>
                     "nav-links" + (isActive ? " activated" : "")
                   }
-                  onClick={handleBooking}
+                  // onClick={handleBooking}
                 >
                   Book
                 </NavLink>
@@ -109,7 +120,7 @@ export function Navbar(props) {
                   {console.log("Hello")}
 
                 {/* {toggleButton} */}
-              {togglebtn ==true ? (<button type="button" className="btn"
+              {isLoggedIn === true ? (<button type="button" className="btn"
               onClick={handleLogout}
               >Logout</button>) : (<button type="button" className="btn" onClick={handleSignUp}>Sign Up</button>)}
 
@@ -121,4 +132,3 @@ export function Navbar(props) {
     </>
   );
 }
-

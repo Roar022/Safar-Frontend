@@ -2,15 +2,15 @@ import React, { useState } from "react";
 import axios from "axios";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import { Navbar } from "../components/Navbar";
+import { setLoginStatus } from "./Auth";
 
-let loggedIns=false;
+// let isLoggedIns = false;
 
 export const Login = (props) => {
 
     let navigate = useNavigate();
     const [uname, setUsername] = useState('');
     const [passwd, setPassword] = useState('');
-    // const [loggedIn, setLoggedIn] = useState(false);
     const [isFormValidated, setIsFormValidated] = useState(false);
 
     const handleLogin = async (event) => {
@@ -22,9 +22,8 @@ export const Login = (props) => {
             password: passwd
           });
           const { message, status } = response.data;
-          // setLoggedIn(status);
-         loggedIns = status;
-          <Navbar loggedIn={status} />
+          setLoginStatus(status);
+          // isLoggedIn = true;
           alert(message);
             if(status){
               navigate("/adduser");
@@ -86,5 +85,3 @@ export const Login = (props) => {
         </div>
     )
 }
-
-export { loggedIns };

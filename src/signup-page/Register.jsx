@@ -3,12 +3,34 @@ import { useState } from "react";
 import { FaUser, FaEnvelope, FaLock } from "react-icons/fa";
 
 export const Register = (props) => {
-
     const [id,setId] = useState();
     const [uname,setUserName] = useState("");
     const [email,setEmail] = useState("");
     const [passwd,setPassword] = useState("");
     const [isFormValidated, setIsFormValidated] = useState(false);
+
+
+    // const [validEmail, setValidEmail] = useState(false);
+    // const [validPassword, setValidPassword] = useState(false);
+
+    // function handleChangePassword(event) {
+    //     if (regex.test(event.target.value)) {
+    //         setValidPassword(true);
+    //     } else {
+    //         setValidPassword(false);
+    //     }
+    
+    // function handleChangeEmail(event) {
+    //     if(regex.test(event.target.value)){
+    //         setValidEmail(false);
+    //     }
+    //     else{
+    //         setValidEmail(true);
+    //     }
+    // }
+
+    const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
+    const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{6,12}$/;
 
     async function save(event)
     {
@@ -41,6 +63,7 @@ export const Register = (props) => {
         }
       };
 
+    
     return (
         <div className="auth-form-container">
             <h2>Create New Account</h2>
@@ -59,20 +82,20 @@ export const Register = (props) => {
                 <input
                 value={email}
                 type="email"
-                name="email"
-                id="email"
                 placeholder="Email"
-                pattern="[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
                 onChange={(event) => {
                     setEmail(event.target.value);
                 }}
-                required
                 />
             </div>
             
             <div className="form-group">
                 <FaLock/>
-                <input value={passwd} type="password" title="Password length should be between 6 to 12 characters" name="password" id="password" placeholder="Password" pattern=".{6,12}" required
+                <input value={passwd}
+                type="password"
+                title="Password length should be between 6 to 12 characters"
+                name="password" id="password"
+                placeholder="Password"
                 onChange={(event) => {
                     setPassword(event.target.value);
                 }}

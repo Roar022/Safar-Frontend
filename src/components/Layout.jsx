@@ -6,7 +6,7 @@ import { Footer } from "./Footer";
 export function Layout() {
   return (
     <>
-      <Navbar />
+      <Navbar/>
       <Outlet/>
       <Footer/>
     </>
