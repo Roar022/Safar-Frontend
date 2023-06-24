@@ -36,17 +36,16 @@ export function Navbar() {
   //     setBookto("/login");
   //   }
   // }
-  
+
   const handleSignUp = () => {
-    navigate("/login")
-  }
-  
+    navigate("/login");
+  };
+
   const handleLogout = () => {
     setBookto("/login");
-    setLoginStatus(false)
-    navigate("/")
-  }
-
+    setLoginStatus(false);
+    navigate("/");
+  };
 
   return (
     <>
@@ -93,10 +92,21 @@ export function Navbar() {
                 >
                   Package
                 </NavLink>
-                </li>
-                <li className="nav-item">
+              </li>
+              <li className="nav-item">
                 <NavLink
-                to={book}
+                  to="/news"
+                  className={({ isActive }) =>
+                    "nav-links" + (isActive ? " activated" : "")
+                  }
+                  onClick={closeMobileMenu}
+                >
+                  News
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink
+                  to={book}
                   className={({ isActive }) =>
                     "nav-links" + (isActive ? " activated" : "")
                   }
@@ -108,6 +118,17 @@ export function Navbar() {
 
               <li className="nav-item">
                 <NavLink
+                  to="/card"
+                  className={({ isActive }) =>
+                    "nav-links" + (isActive ? " activated" : "")
+                  }
+                  onClick={closeMobileMenu}
+                >
+                  Gallery
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink
                   to="/gallery"
                   className={({ isActive }) =>
                     "nav-links" + (isActive ? " activated" : "")
@@ -117,12 +138,18 @@ export function Navbar() {
                   Gallery
                 </NavLink>
               </li>
-                  {console.log("Hello")}
+              {console.log("Hello")}
 
-                {/* {toggleButton} */}
-              {isLoggedIn === true ? (<button type="button" className="btn"
-              onClick={handleLogout}
-              >Logout</button>) : (<button type="button" className="btn" onClick={handleSignUp}>Sign Up</button>)}
+              {/* {toggleButton} */}
+              {isLoggedIn === true ? (
+                <button type="button" className="btn" onClick={handleLogout}>
+                  Logout
+                </button>
+              ) : (
+                <button type="button" className="btn" onClick={handleSignUp}>
+                  Sign Up
+                </button>
+              )}
 
               {/* <a target="_blank" href="Assets\Sign-up\sign-up.html" className="btn" style={{ color: 'white' }}>SignUp</a> */}
             </ul>
