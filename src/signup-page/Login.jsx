@@ -6,6 +6,8 @@ import { setLoginStatus } from "./Auth";
 import "./SignUp.css";
 // let isLoggedIns = false;
 
+let userLoggedIn="";
+
 export const Login = (props) => {
 
     let navigate = useNavigate();
@@ -26,6 +28,7 @@ export const Login = (props) => {
           // isLoggedIn = true;
           alert(message);
             if(status){
+              userLoggedIn=uname;
               navigate("/adduser");
             }
             else{
@@ -85,3 +88,5 @@ export const Login = (props) => {
         </div>
     )
 }
+
+export {userLoggedIn};

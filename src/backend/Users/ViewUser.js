@@ -10,7 +10,7 @@ const ViewUser = () => {
         email:"",
         userPhone:"",
         userCount:"",
-        userArrivalDate:"",
+        userName:"",
         userLeavingDate:""
     })
 
@@ -34,7 +34,7 @@ const ViewUser = () => {
 
             <div className="card">
                 <div className="card-header">
-                    Details of user id : {user.id}
+                    Details of Booking Id : {user.id}
                     <ul className="list-group list-group-flush">
                         <li className="list-group-item">
                             <b>Name : </b>
@@ -67,8 +67,8 @@ const ViewUser = () => {
                         </li>
 
                         <li className="list-group-item">
-                            <b>Arrival Date : </b>
-                            {user.userArrivalDate}
+                            <b>UserName : </b>
+                            {user.userName}
                         </li>
 
                         <li className="list-group-item">

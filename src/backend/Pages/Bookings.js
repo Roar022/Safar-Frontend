@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link, useParams } from "react-router-dom";
 import NavBarBook from "../Layout/NavBarBook";
+import { userLoggedIn } from "../../signup-page/Login";
 
 const Bookings = () => {
   const [users, setUsers] = useState([]);
@@ -15,6 +16,7 @@ const Bookings = () => {
   const loadUsers = async () => {
     const result = await axios.get("http://localhost:8080/users");
     setUsers(result.data);
+    console.log(userLoggedIn);
     // console.log(result.data);
   };
 
@@ -31,7 +33,7 @@ const Bookings = () => {
         <table className="mx-10 table table-bordered border shadow">
           <thead>
             <tr >
-              <th scope="col">S No.</th>
+              <th scope="col">Booking Id</th>
               <th scope="col">Name</th>
               <th scope="col">Destination</th>
               <th scope="col">Departure</th>
@@ -41,14 +43,16 @@ const Bookings = () => {
           </thead>
           <tbody>
             {users.map((user, index) => {
-              return (
-                <tr>
+
+              if(userLoggedIn==="bautocrats"){
+                return (
+                  (<tr>
                   <th scope="row" key={index}>
                     {index + 1}
                   </th>
                   <td >{user.name}</td>
                   <td >{user.userDestination}</td>
-                  <td >{user.userArrivalDate}</td>
+                  <td >{user.userName}</td>
                   <td >{user.userLeavingDate}</td>
                   <td>
                     <Link className="btn btn-primary mx-2" to={`/viewuser/${user.id}`}>View</Link>
@@ -57,8 +61,49 @@ const Bookings = () => {
                     onClick={()=> deleteUser(user.id)}
                     >Delete</button>
                   </td>
-                </tr>
-              );
+                </tr>)
+                )
+              }
+              
+               else if(user.userName===userLoggedIn){
+                  return (<tr>
+                  <th scope="row" key={index}>
+                    {index + 1}
+                  </th>
+                  <td >{user.name}</td>
+                  <td >{user.userDestination}</td>
+                  <td >{user.userName}</td>
+                  <td >{user.userLeavingDate}</td>
+                  <td>
+                    <Link className="btn btn-primary mx-2" to={`/viewuser/${user.id}`}>View</Link>
+                    <Link className="btn btn-outline-primary mx-2" style={{color:"black"}} to={`/edituser/${user.id}`}>Edit</Link>
+                    <button className="btn btn-danger mx-2"
+                    onClick={()=> deleteUser(user.id)}
+                    >Delete</button>
+                  </td>
+                </tr>)
+                }
+                
+                
+                
+                
+                {/* <tr>
+                  <th scope="row" key={index}>
+                    {index + 1}
+                  </th>
+                  <td >{user.name}</td>
+                  <td >{user.userDestination}</td>
+                  <td >{user.userName}</td>
+                  <td >{user.userLeavingDate}</td>
+                  <td>
+                    <Link className="btn btn-primary mx-2" to={`/viewuser/${user.id}`}>View</Link>
+                    <Link className="btn btn-outline-primary mx-2" style={{color:"black"}} to={`/edituser/${user.id}`}>Edit</Link>
+                    <button className="btn btn-danger mx-2"
+                    onClick={()=> deleteUser(user.id)}
+                    >Delete</button>
+                  </td>
+                </tr> */}
+              
             })}
           </tbody>
         </table>

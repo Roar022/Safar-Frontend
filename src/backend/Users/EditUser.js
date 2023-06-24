@@ -14,7 +14,7 @@ import { Link, useNavigate, useParams } from 'react-router-dom';
     const [userPhone,setUserPhone]=useState();
     const [userDestination,setUserDestination]=useState("");
     const [userCount,setUserCount]=useState(1);
-    const [userArrivalDate,setUserArrivalDate]=useState("");
+    const [userName,setuserName]=useState("");
     const [userLeavingDate,setUserLeavingDate]=useState("");
 
     const onSubmit=async (e)=>{
@@ -28,7 +28,7 @@ import { Link, useNavigate, useParams } from 'react-router-dom';
             userPhone : userPhone,
             userDestination : userDestination,
             userCount : userCount,
-            userArrivalDate : userArrivalDate,
+            userName : userName,
             userLeavingDate : userLeavingDate
         });
 
@@ -51,7 +51,7 @@ import { Link, useNavigate, useParams } from 'react-router-dom';
         setAddress(result.data.address);
         setUserPhone(result.data.userPhone);
         setUserCount(result.data.userCount);
-        setUserArrivalDate(result.data.userArrivalDate);
+        setuserName(result.data.userName);
         setUserLeavingDate(result.data.userLeavingDate);
         console.log(result.data);
     }
@@ -158,9 +158,9 @@ import { Link, useNavigate, useParams } from 'react-router-dom';
                     </label>
                     <input
                     type={'text'}
-                    value={userArrivalDate}
+                    value={userName}
                     onChange={(e)=>
-                        setUserArrivalDate(e.target.value)
+                        setuserName(e.target.value)
                     }
                     className='form-control'
                     placeholder="Enter your email address"/>

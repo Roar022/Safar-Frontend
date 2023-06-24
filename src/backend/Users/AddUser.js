@@ -26,7 +26,7 @@ function Book() {
     const [userPhone,setUserPhone]=useState();
     const [userDestination,setUserDestination]=useState("");
     const [userCount,setUserCount]=useState(1);
-    const [userArrivalDate,setUserArrivalDate]=useState("");
+    const [userName,setuserName]=useState("");
     const [userLeavingDate,setUserLeavingDate]=useState("");
 
     const onSubmit = async (e)=>{
@@ -40,7 +40,7 @@ function Book() {
             userPhone : userPhone,
             userDestination : userDestination,
             userCount : userCount,
-            userArrivalDate : userArrivalDate,
+            userName : userName,
             userLeavingDate : userLeavingDate
         });
 
@@ -152,12 +152,13 @@ function Book() {
             </div>
 
             <div className="inputBox">
-              <span>Arrivals : </span>
-              <input type="date"
+              <span>UserName : </span>
+              <input type="text"
                 required 
-                value={userArrivalDate}
+                value={userName}
+                placeholder="Enter your login user name"
                 onChange={(e)=>
-                    setUserArrivalDate(e.target.value)
+                    setuserName(e.target.value)
                 }    
                 />
             </div>
