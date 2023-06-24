@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { FaUser, FaEnvelope, FaLock } from "react-icons/fa";
-
+import "./SignUp.css";
 export const Register = (props) => {
     const [id,setId] = useState();
     const [uname,setUserName] = useState("");
