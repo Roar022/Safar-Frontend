@@ -127,7 +127,8 @@ export function Navbar() {
                   Gallery
                 </NavLink>
               </li>
-              <li className="nav-item">
+              {/* extra gallery link */}
+              {/* <li className="nav-item">
                 <NavLink
                   to="/gallery"
                   className={({ isActive }) =>
@@ -137,8 +138,8 @@ export function Navbar() {
                 >
                   Gallery
                 </NavLink>
-              </li>
-              {console.log("Hello")}
+              </li> */}
+              {/* {console.log("Hello")} */}
 
               {/* {toggleButton} */}
               {isLoggedIn === true ? (
