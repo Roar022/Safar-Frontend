@@ -6,7 +6,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 npm install
 
-npm install react-router-dom
+npm install react-router-dom@6.13.0
 
 npm install react-icons --save
 
