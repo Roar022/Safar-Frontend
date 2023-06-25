@@ -27,7 +27,7 @@ const Bookings = () => {
   }
 
   return (
-    <div className="container" style={{margin:"auto",marginTop:"5rem"}}>
+    <div className="container " style={{margin:"auto",marginTop:"5rem",marginBottom:"50px"}}>
       <NavBarBook/>
       <div className="py-4">
         <table className="mx-10 table table-bordered border shadow">
@@ -36,14 +36,15 @@ const Bookings = () => {
               <th scope="col">Booking Id</th>
               <th scope="col">Name</th>
               <th scope="col">Destination</th>
+              <th scope="col">userName</th>
               <th scope="col">Departure</th>
-              <th scope="col">Return Date</th>
               <th scope="col">Actions</th>
             </tr>
           </thead>
           <tbody>
             {users.map((user, index) => {
 
+              
               if(userLoggedIn==="bautocrats"){
                 return (
                   (<tr>
@@ -75,9 +76,9 @@ const Bookings = () => {
                   <td >{user.userName}</td>
                   <td >{user.userLeavingDate}</td>
                   <td>
-                    <Link className="btn btn-primary mx-2" to={`/viewuser/${user.id}`}>View</Link>
-                    <Link className="btn btn-outline-primary mx-2" style={{color:"black"}} to={`/edituser/${user.id}`}>Edit</Link>
-                    <button className="btn btn-danger mx-2"
+                    <Link className="btn btn-primary btn-lg mx-2" to={`/viewuser/${user.id}`}>View</Link>
+                    <Link className="btn btn-outline-primary btn-lg mx-2" style={{color:"black"}} to={`/edituser/${user.id}`}>Edit</Link>
+                    <button className="btn btn-danger mx-2 btn-lg"
                     onClick={()=> deleteUser(user.id)}
                     >Delete</button>
                   </td>

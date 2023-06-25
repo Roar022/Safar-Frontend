@@ -1,11 +1,23 @@
  
-import React, { Fragment } from "react";
+import React, { Fragment, useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
+import { lin } from "../signup-page/Login";
 
 function Package() {
   const [packagesData, setPackagesData] = React.useState([]);
   const [visibility, setVisibility] = React.useState(3);
   const [loading, setLoading] = React.useState(true);
+  const [book, setBookto] = useState("");
+
+
+  useEffect(() => {
+    if (lin) {
+      setBookto("/adduser");
+    } else {
+      setBookto("/login");
+    }
+  }, [lin]);
+
 
   React.useEffect(() => {
     fetch(
@@ -29,9 +41,9 @@ function Package() {
       <div className="content">
         <h3>{d["name"]}</h3>
         <p>{d["description"]}</p>
-        <NavLink to="/adduser" className="btnnb">
+        {/* <NavLink to="/adduser" className="btnnb">
           book now
-        </NavLink>
+        </NavLink> */}
       </div>
     </div>
   ));

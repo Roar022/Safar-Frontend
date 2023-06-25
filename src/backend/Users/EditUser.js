@@ -154,7 +154,7 @@ import { Link, useNavigate, useParams } from 'react-router-dom';
 
                 <div className="mb-3">
                     <label htmlFor='text' className='form-label'>
-                        Arrival Date 
+                        userName 
                     </label>
                     <input
                     type={'text'}

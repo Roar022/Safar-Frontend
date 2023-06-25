@@ -7,6 +7,7 @@ import "./SignUp.css";
 // let isLoggedIns = false;
 
 let userLoggedIn="";
+let lin=false;
 
 export const Login = (props) => {
 
@@ -26,6 +27,7 @@ export const Login = (props) => {
           const { message, status } = response.data;
           setLoginStatus(status);
           // isLoggedIn = true;
+          lin=true;
           alert(message);
             if(status){
               userLoggedIn=uname;
@@ -89,4 +91,4 @@ export const Login = (props) => {
     )
 }
 
-export {userLoggedIn};
+export {userLoggedIn, lin};
