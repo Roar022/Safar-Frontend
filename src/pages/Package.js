@@ -1,35 +1,34 @@
+ 
 import React, { Fragment } from "react";
 import { NavLink } from "react-router-dom";
-import Data from "./Data";
-// import { setupMenu, setupSwiper, setupLoadMore } from './Assets/js/script.js';
-
-// // Call the setup functions
-// setupMenu();
-// setupSwiper();
-// setupLoadMore();
 
 function Package() {
-  const [dataa, setData] = React.useState(Data);
+  const [packagesData, setPackagesData] = React.useState([]);
   const [visibility, setVisibility] = React.useState(3);
+  const [loading, setLoading] = React.useState(true);
 
-  // React.useEffect(() => {
-  //   fetch(
-  //     "https://api.unsplash.com/search/photos?query=tourist%20attraction&client_id=CnwwMAFDZGn9uxKC9bKQUQnc-0c3ANeOls_M9UpY3Z4"
-  //   )
-  //     .then((res) => res.json())
-  //     .then((data) => setData(data.results));
-  // }, [dataa.id]);
+  React.useEffect(() => {
+    fetch(
+      "https://script.google.com/macros/s/AKfycbxvCT3CJnO4GlqzUZsaXFxSWZHDy_QwRGkZPlDMbH-yhp3uEtpvgB3xIOwnBdBO6sS1/exec"
+    )
+      .then((res) => res.json())
+      .then((data) => {setPackagesData(data);
+        setLoading(false);
+      });
+  },[]);
 
-  console.log(dataa);
-
-  const elements = dataa.slice(0, visibility).map((resu) => (
+  if (loading) {
+    return <div className="Loading_news"
+    >Loading... Please wait</div>;
+  }
+  const elements = packagesData.slice(0, visibility).map((d, index) => (
     <div className="box">
       <div className="image">
-        <img src={resu.image} alt="" />
+        <img src={d["image"]} alt="" />
       </div>
       <div className="content">
-        <h3>{resu.name}</h3>
-        <p>{resu.description}</p>
+        <h3>{d["name"]}</h3>
+        <p>{d["description"]}</p>
         <NavLink to="/adduser" className="btnnb">
           book now
         </NavLink>
@@ -41,7 +40,7 @@ function Package() {
     setVisibility((prev) => prev + 3);
   };
 
-  return  (
+  return (
     <Fragment>
       <div
         className="heading"
@@ -55,9 +54,21 @@ function Package() {
 
         <div className="box-container">{elements}</div>
 
-        <div className="load-more" onClick={handleClick}>
-          <span className="btnnb">load more</span>
-        </div>
+        {visibility === 12 ? (
+          <h1
+            style={{
+              justifyContent: "center",
+              textAlign: "center",
+              margin: "2rem 1rem",
+            }}
+          >
+            End of Packages
+          </h1>
+        ) : (
+          <div className="load-more" onClick={handleClick}>
+            <span className="btnnb">load more</span>
+          </div>
+        )}
       </section>
 
       <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>

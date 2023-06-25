@@ -2,6 +2,10 @@ import React, { useEffect, useState } from "react";
 import { createClient } from "pexels";
 
 const Card = () => {
+  const [loading, setLoading] = React.useState(true);
+
+
+
   // Defined state variables to store the fetched gallery photos
   const [galleryPhoto, setPhoto] = useState([]);
 
@@ -28,9 +32,10 @@ const Card = () => {
     const client = createClient(
       "Gv3szbGhHkRJknx4qs2lKgezyd5dmQiUyYp4zolHjDudDTzaitFgJw6M"
     );
-
+    
     const photos = await client.photos.search({ query: queryy, per_page: num });
     setPhoto(photos.photos);
+    setLoading(false);
   };
 
   // Fetch photos when the component mounts or when num or queryy changes
@@ -47,6 +52,10 @@ const Card = () => {
     );
   });
 
+  if (loading) {
+    return <div className="Loading_news"
+    >Loading... Please wait</div>;
+  }
   // Render the Card component
   return (
     <>
@@ -66,9 +75,15 @@ const Card = () => {
       <div className="gallery-container">{element}</div>
 
       {/* Button to load more photos */}
-      <button onClick={toggle} className="load_more_gallery">
-        Load More
-      </button>
+      <div className="load-more"
+                  style={{
+                    justifyContent: "center",
+                    textAlign: "center",
+                    margin: "2rem 1rem",
+                  }}
+      onClick={toggle}>
+            <span className="btnnb">load more</span>
+          </div>
     </>
   );
 };
