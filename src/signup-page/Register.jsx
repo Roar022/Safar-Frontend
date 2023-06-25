@@ -70,7 +70,7 @@ export const Register = (props) => {
         <form className={`register-form ${isFormValidated ? "was-validated" : ""}`} onSubmit={handleFormSubmit}>
             <div className="form-group">
                 <FaUser/>
-                <input value={uname} type="username" name="username" id="username" placeholder="Username" required
+                <input value={uname} style={{textTransform:"none"}} type="username" name="username" id="username" placeholder="Username" required
                 onChange={(event) => {
                     setUserName(event.target.value);
                 }}
@@ -80,6 +80,7 @@ export const Register = (props) => {
             <div className="form-group">
                 <FaEnvelope/>
                 <input
+                style={{textTransform:"lowercase"}}
                 value={email}
                 type="email"
                 placeholder="Email"

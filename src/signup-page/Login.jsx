@@ -59,6 +59,7 @@ export const Login = (props) => {
             <label htmlFor="username">Username: </label>
             <input
             value={uname}
+            style={{textTransform:"none"}}
             type="username"
             name="username"
             id="username"
@@ -71,6 +72,7 @@ export const Login = (props) => {
             <label htmlFor="password">Password: </label>
             <input
             value={passwd}
+            style={{textTransform:"none"}}
             type="password"
             name="password"
             id="password"
