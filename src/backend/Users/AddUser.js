@@ -147,6 +147,7 @@ function Book() {
                 onChange={(e)=>
                     setUserCount(e.target.value)
                 }
+                min={1}
                 required
               />
             </div>
@@ -167,6 +168,7 @@ function Book() {
               <span>Leaving : </span>
               <input type="date" name="leaving" required 
                 value={userLeavingDate}
+                min={"27-06-2023"}
                 onChange={(e)=>
                     setUserLeavingDate(e.target.value)
                 }
