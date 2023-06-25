@@ -51,8 +51,8 @@ function About() {
       <section className="reviews">
         <h1 className="heading-title">clients reviews</h1>
 
-        <div className="swiper reviews-slider">
-          <div className="swiper-wrapper">
+        {/* <div className="swiper reviews-slider"> */}
+          <div className="swiper-wrapper" style={{display:"flex",flexDirection:"column"}}>
             <div className="swiper-slide client-Testimonials slide">
               <div className="stars">
                 <i className="fas fa-star"></i>
@@ -68,7 +68,7 @@ function About() {
                 included all the must-visit destinations along with some hidden
                 gems.
               </p>
-              <h3>John Doe</h3>
+              <h3>Arpit Dubey</h3>
               <span>traveler</span>
               <img src="Assets/Images/pf1.jpg" alt="" />
             </div>
@@ -126,7 +126,7 @@ function About() {
                 Assam, Meghalaya must also visit Majuli island My best wishes to
                 Safar.com
               </p>
-              <h3>Arpit Dubey</h3>
+              <h3>Harsh Kumar Singh</h3>
               <span>traveler</span>
               <img src="Assets/Images/pf3.jpg" alt="" />
             </div>
@@ -165,7 +165,7 @@ function About() {
               <img src="Assets/Images/pf4.jpg" alt="" />
             </div>
           </div>
-        </div>
+        {/* </div> */}
       </section>
 
       <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>

@@ -124,9 +124,9 @@ function Home() {
                 purposes. They include services such as meeting facilities,
                 accommodations, and transportation.
               </p>
-              <Link to="/adduser" className="btnnb">
+              {/* <Link to="/adduser" className="btnnb">
                 book now
-              </Link>
+              </Link> */}
             </div>
           </div>
           <div className="box">
@@ -140,9 +140,9 @@ function Home() {
                 have fun on their vacations. They include activities such as
                 sightseeing, beach vacations,
               </p>
-              <Link to="/adduser" className="btnnb">
+              {/* <Link to="/adduser" className="btnnb">
                 book now
-              </Link>
+              </Link> */}
             </div>
           </div>
 
@@ -158,15 +158,15 @@ function Home() {
                 activities such as hiking, wildlife tours, and eco-friendly
                 accommodations.
               </p>
-              <Link to="/adduser" className="btnnb">
+              {/* <Link to="/adduser" className="btnnb">
                 book now
-              </Link>
+              </Link> */}
             </div>
           </div>
         </div>
         <div className="load-more">
           <Link to="/package" className="btnnb">
-            load more
+            Explore More Packages
           </Link>
         </div>
       </section>
@@ -178,8 +178,8 @@ function Home() {
             Ready to explore the world without breaking the bank? Take advantage
             of our limited time offer and get 50% off on your dream vacation!
           </p>
-          <Link to="/adduser" className="btnnb">
-            book now
+          <Link to="/package" className="btnnb">
+            Explore Packages Now
           </Link>
         </div>
       </section>

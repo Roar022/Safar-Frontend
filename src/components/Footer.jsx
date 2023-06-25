@@ -19,9 +19,9 @@ export function Footer(){
             <Link to="/package" style={{textDecoration:"none"}}>
               <i className="fas fa-angle-right"></i>package
             </Link>
-            <Link to="/booking" style={{textDecoration:"none"}}>
+            {/* <Link to="/booking" style={{textDecoration:"none"}}>
               <i className="fas fa-angle-right"></i>book
-            </Link>
+            </Link> */}
             <Link to="/gallery" style={{textDecoration:"none"}}>
               <i className="fas fa-angle-right"></i>gallery
             </Link>
@@ -32,7 +32,7 @@ export function Footer(){
             <Link to="/" style={{textDecoration:"none"}} >
               <i className="fas fa-angle-right"></i>ask questions
             </Link>
-            <Link to="/" style={{textDecoration:"none"}}>
+            <Link to="/about" style={{textDecoration:"none"}}>
               <i className="fas fa-angle-right"></i>about us
             </Link>
             <Link to="/" style={{textDecoration:"none"}}>
