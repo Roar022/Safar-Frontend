@@ -899,12 +899,15 @@ section{
 /* -------------------------------------------------------------------------------------------- */
 
 .Loading_news{
-    width: 150px;
-    font-size: 14px;
+    width: auto;
+    font-size: 7rem;
     margin: auto;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    color: #09bef0;
+    color: #8e44ad;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 20rem 2rem;
 }
 .news{
     display: flex;
@@ -930,10 +933,11 @@ section{
     font-family: Arial, Helvetica, sans-serif;
     line-height: 115%;
     word-spacing: 6px;
-    color: #09bef0;
-    font-size: 25px;
-    margin-top: 25px;
+    color: #8e44ad;
+    font-size: 4rem;
+    margin-top: 4rem;
     margin-bottom: 15px;
+    font-weight: 500;
   }
   .welcome p{
     font-family: Arial, Helvetica, sans-serif;
@@ -963,6 +967,9 @@ section{
 
   .data{
     width: 1800px;
+  }
+  .data h2{
+    margin-bottom: 3rem;
   }
   .detail_1 {
     /* styles for truncated detail_1 */
@@ -1006,8 +1013,10 @@ section{
     width: 505px;
     margin: auto;
   }
-    .data h1{
+    .data h2{
       font-size: 20px;
+      font-weight: 500;
+      margin-bottom: 3rem;
     }
     .div_photo {
         width: 466px;
@@ -1044,7 +1053,7 @@ section{
     
   }
   .welcome h2{
-    color: #09bef0;
+    color: #8e44ad;
   }
   .welcome p{
     
@@ -1075,7 +1084,7 @@ section{
       width: 150px;
       height: 60px;
       border-radius: 30px;
-      background-color: #09bef0;
+      background-color: #8e44ad;
       border: 1px transparent ;
     box-shadow: 10px 10px 15px #cfdfec;
       margin: auto;
@@ -1086,7 +1095,7 @@ section{
    font-weight: 600;
   }
   .load_more_news:hover{
-    background-color: #58d6f9;
+    background-color: #8e44ad;
      
   }
 
@@ -1116,9 +1125,10 @@ section{
        height: 100%;
        overflow: hidden;
        transition: transform 1s, filter 1s;
+       filter: grayscale(50%);
    }
    .gallery img:hover{
-       filter:grayscale(100%);
+       filter:grayscale(0%);
        transform:scale(1.05);
        box-shadow:0px 0px 12px 15px var(--light-black);
        /* x y blur radius  */
@@ -1135,7 +1145,7 @@ section{
        display: contents;
        display: block;
      font-family: Arial, Helvetica, sans-serif;
-    font-size: 1.3rem;
+    font-size: 2rem;
     font-weight: 600;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -1164,10 +1174,10 @@ section{
     height: 40px;
     border-radius: 15px;
     font-size: 18px;
-    border:2px solid #09bef0;
-    margin: auto;
+    border:2px solid #8e44ad;
     display: block;
     padding: 10px;
+    margin: 3rem auto;
 
   }
    
