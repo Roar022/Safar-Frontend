@@ -53,10 +53,10 @@ function Book() {
             userLeavingDate : userLeavingDate
         });
 
-        alert("User registration successfully");
+        alert("Package Booked successfully");
         navigate("/booking");
         }catch(err){
-            alert("User Registration failed");
+            alert("Package Booking Failed");
         }
     }
 
