@@ -35,27 +35,31 @@ export const Register = (props) => {
     async function save(event)
     {
         event.preventDefault();
-        try {
-          await axios.post("http://localhost:8082/safar/user/register",
-          {
-            username: uname,
-            email : email,
-            password : passwd
-          });
-          setId();
-          setUserName("");
-          setEmail("");
-          setPassword("");
-          alert("Account Created Successfully");
-        }
-        catch(err) {
-            alert("Registration Failed !");
+        if(emailRegex.test(email)){
+            try {
+                await axios.post("http://localhost:8082/safar/user/register",
+                {
+                  username: uname,
+                  email : email,
+                  password : passwd
+                });
+                setId();
+                setUserName("");
+                setEmail("");
+                setPassword("");
+                alert("Account Created Successfully");
+              }
+              catch(err) {
+                  alert("Registration Failed !");
+              }
+        }else{
+            alert("enter valid email");
         }
     };
 
     const handleFormSubmit = (event) => {
         event.preventDefault();
-        if (event.currentTarget.checkValidity()) {
+        if (event.currentTarget.checkValidity() && emailRegex.test(email)) {
           setIsFormValidated(true);
           save(event);
         } else {
@@ -80,8 +84,8 @@ export const Register = (props) => {
             <div className="form-group">
                 <FaEnvelope/>
                 <input
-                style={{textTransform:"lowercase"}}
                 value={email}
+                style={{textTransform:"none"}}
                 type="email"
                 placeholder="Email"
                 onChange={(event) => {

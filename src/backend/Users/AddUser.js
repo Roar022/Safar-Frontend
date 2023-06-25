@@ -9,13 +9,22 @@ function Book() {
     event.target.setCustomValidity("Only Alphabets Allowed.");
   };
 
-  const handleEmailInvalid = (event) => {
-    event.target.setCustomValidity("Invalid Email Address.");
-  };
+  // const handleEmailInvalid = (event) => {
+  //   event.target.setCustomValidity("Invalid Email Address.");
+  // };
+  const emailRegex = /^[A-Z0-9a-z._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
+  const dates = new Date();
+  let years=dates.getUTCFullYear();
+  let months = dates.getUTCMonth()+1;
+  let days = dates.getUTCDate();
 
-  const handlePhoneInvalid = (event) => {
-    event.target.setCustomValidity("Invalid Phone Number ");
-  };
+  let dateshow = `${ years}-${(months>9 ? '' : '0') + months}-${(days>9 ? '' : '0') + days}`;
+  // console.log(dateshow);
+
+
+  // const handlePhoneInvalid = (event) => {
+  //   event.target.setCustomValidity("Invalid Phone Number ");
+  // };
 
 
 //   ====================Backend Addition   =================
@@ -74,7 +83,7 @@ function Book() {
                 type={'text'}
                 placeholder="Enter Your Name"
                 pattern="^[a-zA-Z\s]{2,}$"
-                onInvalid={handleNameInvalid}
+                // onInvalid={handleNameInvalid}
                 value={name}
                 onChange={(e)=>
                     setName(e.target.value)
@@ -93,7 +102,7 @@ function Book() {
                 }
                 placeholder="Enter Your Email"
                 pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
-                onInvalid={handleEmailInvalid}
+                // onInvalid={handleEmailInvalid}
                 required
               />
             </div>
@@ -101,14 +110,14 @@ function Book() {
             <div className="inputBox">
               <span>Phone : </span>
               <input
-                type="number"
-                placeholder="Enter Your Number"
+                type="tel"
+                placeholder="Enter Your Only 10-digit Numbers"
                 pattern="[0-9]{10}"
                 value={userPhone}
                 onChange={(e)=>
                     setUserPhone(e.target.value)
                 }
-                onInvalid={handlePhoneInvalid}
+                // onInvalid={handlePhoneInvalid}
                 required
               />
             </div>
@@ -168,7 +177,9 @@ function Book() {
               <span>Leaving : </span>
               <input type="date" name="leaving" required 
                 value={userLeavingDate}
-                min={"27-06-2023"}
+                // minDate={new Date()}
+                // min="2023-06-25"
+                min={dateshow}
                 onChange={(e)=>
                     setUserLeavingDate(e.target.value)
                 }
