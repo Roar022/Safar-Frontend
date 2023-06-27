@@ -50,7 +50,12 @@ export function Navbar() {
   return (
     <>
       <IconContext.Provider value={{ color: "black" }}>
-        <nav className="navbar">
+        <nav className="navbar"
+        style={{
+          padding: "0 !important",
+          boxShadow : "0 .5rem 1rem rgba(0,0,0,.1)",
+        }}
+        >
           <div className="navbar-container container">
             <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
               {/* <GiRocketThruster className="navbar-icon" /> */}
