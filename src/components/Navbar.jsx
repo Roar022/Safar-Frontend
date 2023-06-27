@@ -50,7 +50,7 @@ export function Navbar() {
   return (
     <>
       <IconContext.Provider value={{ color: "black" }}>
-        <nav className="navbar"
+        <nav className="navbar padding0"
         style={{
           padding: "0 !important",
           boxShadow : "0 .5rem 1rem rgba(0,0,0,.1)",

@@ -17,6 +17,9 @@
   z-index: 999;
   padding: 0;
 }
+.padding0{
+  padding: 0 !important;
+}
 
 .navbar-container {
   display: flex;
