@@ -13,7 +13,7 @@ export function Footer(){
             <Link to="/" style={{textDecoration:"none"}}>
               <i className="fas fa-angle-right"></i>home
             </Link>
-            <Link to="/" style={{textDecoration:"none"}}>
+            <Link to="/about" style={{textDecoration:"none"}}>
               <i className="fas fa-angle-right"></i>about
             </Link>
             <Link to="/package" style={{textDecoration:"none"}}>
@@ -22,7 +22,7 @@ export function Footer(){
             {/* <Link to="/booking" style={{textDecoration:"none"}}>
               <i className="fas fa-angle-right"></i>book
             </Link> */}
-            <Link to="/gallery" style={{textDecoration:"none"}}>
+            <Link to="/card" style={{textDecoration:"none"}}>
               <i className="fas fa-angle-right"></i>gallery
             </Link>
           </div>
